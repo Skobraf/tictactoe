@@ -102,7 +102,7 @@ export const Board = () => {
       <div className="board-size">
         <p>Board Size: </p>
         <div className='counter'>
-          <input type="number" value={boardSize} onChange={handleBoardSize} />
+          <input aria-label='board-size' type="number" value={boardSize} onChange={handleBoardSize} />
         </div>
       </div>
       <div className='player-inputs'>
@@ -110,11 +110,13 @@ export const Board = () => {
           type="text"
           value={playerName["X"].name}
           onChange={handleChangeName1}
+          aria-label='player1'
         />
         <input
           type="text"
           value={playerName["O"].name}
           onChange={handleChangeName2}
+          aria-label='player2'
         />
       </div>
       <div className='player-name'>
@@ -127,12 +129,13 @@ export const Board = () => {
           <div className="cells" key={`key ${idx}`}>
             {subArr.map((arr, tsx) => (
               <button
-              key={`cell ${tsx} ${idx}`}
+               key={`cell ${tsx} ${idx}`}
                 className="single-cell"
                 value={`${idx}.${tsx}`}
                 onClick={handleCellClick}
                 disabled={isGameOver}
                 data-testid={`cell-click ${tsx} ${idx}`}
+                aria-label='board-buttons'
               >
                 {board[idx][tsx]}
               </button>

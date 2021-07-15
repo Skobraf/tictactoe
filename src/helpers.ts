@@ -4,14 +4,14 @@ export const createBoard = (n: number) => {
   return [...Array(n)].map((row) => Array(n).fill(""));
 };
 
-const isHorizontalWinner = (currentPlayer: TicTac, board: string[][]) => {
+export const isHorizontalWinner = (currentPlayer: TicTac, board: string[][]) => {
   return board.some((moves) => moves.every((move) => move === currentPlayer));
 };
 
 const transposeBoard = (board: string[][]) => {
   return board.map((_, index) => board.map((row) => row[index]));
 };
-const isVerticalWinner = (currentPlayer: TicTac, board: string[][]) => {
+export const isVerticalWinner = (currentPlayer: TicTac, board: string[][]) => {
   return transposeBoard(board).some((moves) =>
     moves.every((move) => move === currentPlayer)
   );
@@ -42,7 +42,7 @@ const getDiagonalMoves = (board: string[][]) => {
   return diagonalMoves;
 };
 
-const isDiagonalWinner = (currentPlayer: TicTac, board: string[][]) => {
+export const isDiagonalWinner = (currentPlayer: TicTac, board: string[][]) => {
   return getDiagonalMoves(board).some((moves) =>
     moves.every((move) => move === currentPlayer)
   );
