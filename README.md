@@ -13,3 +13,6 @@ In the project directory, you can run:
 \*\*\* in helpers file you find all the helper functions to check if the player has win
 
 \*\*\* the function to check if the user has win will execute after the N-1 click on the board.
+
+### demo
+* https://codesandbox.io/s/awesome-poitras-uo62z?file=/src/helpers.test.ts
